@@ -21,6 +21,10 @@ const Board = () => {
   const [squares, setSquares] = useState(Array(9).fill(null));
 
   function handleClick(i) {
+    // If it's already been set, it cannot reset again.
+    if (squares[i]) {
+      return;
+    }
     const nextSquares = squares.slice();
 
     // nextSquares[i] = 'X';
