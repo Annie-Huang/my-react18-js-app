@@ -1,6 +1,12 @@
-const Square = ({ value }) => {
+import { useState } from 'react';
+
+// const Square = ({ value }) => {
+const Square = () => {
+  const [value, setValue] = useState(null);
+
   const handleClick = () => {
-    console.log('clicked!');
+    // console.log('clicked!');
+    setValue('X');
   };
 
   return (
@@ -11,7 +17,7 @@ const Square = ({ value }) => {
 };
 
 const Board = () => {
-  return (
+  /*  return (
     <>
       <div className='board-row'>
         <Square value='1' />
@@ -27,6 +33,25 @@ const Board = () => {
         <Square value='7' />
         <Square value='8' />
         <Square value='9' />
+      </div>
+    </>
+  );*/
+  return (
+    <>
+      <div className='board-row'>
+        <Square />
+        <Square />
+        <Square />
+      </div>
+      <div className='board-row'>
+        <Square />
+        <Square />
+        <Square />
+      </div>
+      <div className='board-row'>
+        <Square />
+        <Square />
+        <Square />
       </div>
     </>
   );
