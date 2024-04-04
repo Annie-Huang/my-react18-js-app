@@ -129,10 +129,11 @@ const Board = ({ xIsNext, squares, onPlay }) => {
 };
 
 const Game = () => {
-  const [xIsNext, setXIsNext] = useState(true);
+  // const [xIsNext, setXIsNext] = useState(true);
   // const [squares, setSquares] = useState(Array(9).fill(null));
   const [history, setHistory] = useState([Array(9).fill(null)]);
   const [currentMove, setCurrentMove] = useState(0);
+  const xIsNext = currentMove % 2 === 0;
 
   // const currentSquares = history[history.length - 1];
   const currentSquares = history[currentMove]; // You can actually jump forward and backwards.
@@ -143,19 +144,21 @@ const Game = () => {
     // setHistory([...history, nextSquares]);
 
     console.log(currentMove);
+    // This will override any steps from the currentMove+1, in case user jumpTo a few steps previously.
     const nextHistory = [...history.slice(0, currentMove + 1), nextSquares];
     setHistory(nextHistory);
     setCurrentMove(nextHistory.length - 1);
 
-    setXIsNext(!xIsNext);
+    // setXIsNext(!xIsNext);
   };
 
   const jumpTo = (nextMove) => {
     // TODO
     setCurrentMove(nextMove);
-    setXIsNext(nextMove % 2 === 0);
+    // setXIsNext(nextMove % 2 === 0);
   };
 
+  // You can jump forwards and backwards to different step. And when you are in a before step, you can click on board to override any step from then on too.
   const moves = history.map((squares, move) => {
     let description;
     if (move > 0) {
