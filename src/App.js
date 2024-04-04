@@ -1,12 +1,12 @@
 import { useState } from 'react';
 
-// const Square = ({ value }) => {
-const Square = () => {
-  const [value, setValue] = useState(null);
+const Square = ({ value }) => {
+  // const Square = () => {
+  //   const [value, setValue] = useState(null);
 
   const handleClick = () => {
     // console.log('clicked!');
-    setValue('X');
+    // setValue('X');
   };
 
   return (
@@ -17,6 +17,8 @@ const Square = () => {
 };
 
 const Board = () => {
+  const [squares, setSquares] = useState(Array(9).fill(null));
+
   /*  return (
     <>
       <div className='board-row'>
@@ -35,7 +37,7 @@ const Board = () => {
         <Square value='9' />
       </div>
     </>
-  );*/
+  );
   return (
     <>
       <div className='board-row'>
@@ -52,6 +54,25 @@ const Board = () => {
         <Square />
         <Square />
         <Square />
+      </div>
+    </>
+  );*/
+  return (
+    <>
+      <div className='board-row'>
+        <Square value={squares[0]} />
+        <Square value={squares[1]} />
+        <Square value={squares[2]} />
+      </div>
+      <div className='board-row'>
+        <Square value={squares[3]} />
+        <Square value={squares[4]} />
+        <Square value={squares[5]} />
+      </div>
+      <div className='board-row'>
+        <Square value={squares[6]} />
+        <Square value={squares[7]} />
+        <Square value={squares[8]} />
       </div>
     </>
   );
