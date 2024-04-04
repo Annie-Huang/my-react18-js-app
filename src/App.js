@@ -133,7 +133,9 @@ const Game = () => {
   // const [squares, setSquares] = useState(Array(9).fill(null));
   const [history, setHistory] = useState([Array(9).fill(null)]);
   const [currentMove, setCurrentMove] = useState(0);
-  const currentSquares = history[history.length - 1];
+
+  // const currentSquares = history[history.length - 1];
+  const currentSquares = history[currentMove]; // You can actually jump forward and backwards.
 
   const handlePlay = (nextSquares) => {
     // TODO
