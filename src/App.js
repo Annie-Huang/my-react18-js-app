@@ -16,9 +16,10 @@ const Square = ({ value, onSquareClick }) => {
   );
 };
 
-const Board = () => {
-  const [xIsNext, setXIsNext] = useState(true);
-  const [squares, setSquares] = useState(Array(9).fill(null));
+// const Board = () => {
+const Board = ({ xIsNext, squares, onPlay }) => {
+  /*  const [xIsNext, setXIsNext] = useState(true);
+  const [squares, setSquares] = useState(Array(9).fill(null));*/
 
   const calculateWinner = (squares) => {
     const lines = [
@@ -58,8 +59,9 @@ const Board = () => {
       nextSquares[i] = 'O';
     }
 
-    setSquares(nextSquares);
-    setXIsNext(!xIsNext);
+    // setSquares(nextSquares);
+    // setXIsNext(!xIsNext);
+    onPlay(nextSquares);
   };
 
   const winner = calculateWinner(squares);
@@ -131,10 +133,19 @@ const Board = () => {
 };
 
 const Game = () => {
+  const [xIsNext, setXIsNext] = useState(true);
+  // const [squares, setSquares] = useState(Array(9).fill(null));
+  const [history, setHistory] = useState([Array(9).fill(null)]);
+  const currentSquares = history[history.length - 1];
+
+  function handlePlay(nextSquares) {
+    // TODO
+  }
+
   return (
     <div className='game'>
       <div className='game-board'>
-        <Board />
+        <Board xIsNext={xIsNext} squares={currentSquares} onPlay={handlePlay} />
       </div>
       <div className='game-info'>
         <ol>{/*TODO*/}</ol>
