@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const Square = ({ value }) => {
+const Square = ({ value, onSquareClick }) => {
   // const Square = () => {
   //   const [value, setValue] = useState(null);
 
@@ -10,7 +10,7 @@ const Square = ({ value }) => {
   };
 
   return (
-    <button className='square' onClick={handleClick}>
+    <button className='square' onClick={onSquareClick}>
       {value}
     </button>
   );
@@ -18,6 +18,12 @@ const Square = ({ value }) => {
 
 const Board = () => {
   const [squares, setSquares] = useState(Array(9).fill(null));
+
+  function handleClick() {
+    const nextSquares = squares.slice();
+    nextSquares[0] = 'X';
+    setSquares(nextSquares);
+  }
 
   /*  return (
     <>
@@ -60,7 +66,7 @@ const Board = () => {
   return (
     <>
       <div className='board-row'>
-        <Square value={squares[0]} />
+        <Square value={squares[0]} onSquareClick={handleClick} />
         <Square value={squares[1]} />
         <Square value={squares[2]} />
       </div>
