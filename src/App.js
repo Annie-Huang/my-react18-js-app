@@ -152,8 +152,11 @@ const Game = () => {
     } else {
       description = 'Go to game start';
     }
+
+    // key is a special and reserved property in React. Keys help React identify which items have changed, are added, or are removed.
+    // Keys do not need to be globally unique; they only need to be unique between components and their siblings.
     return (
-      <li>
+      <li key={move}>
         <button onClick={() => jumpTo(move)}>{description}</button>
       </li>
     );
