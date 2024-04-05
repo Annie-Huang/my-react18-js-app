@@ -62,13 +62,22 @@ const PhoneBookForm = ({ addUser }) => {
   );
 };
 const App = () => {
+  const [users, setUsers] = useState([]);
+
   const handleAddUser = (user) => {
-    console.log('aaa', user);
+    // console.log('aaa', user);
+    setUsers([...users, { ...user, id: users.length + 1 }]);
   };
 
+  console.log('users', users);
   return (
     <div className='container'>
       <PhoneBookForm addUser={handleAddUser} />
+      {users.map((user) => (
+        <div key={user.id}>
+          {`${user.firstName} ${user.lastName} ${user.phone}`}
+        </div>
+      ))}
     </div>
   );
 };
