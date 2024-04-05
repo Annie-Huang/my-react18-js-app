@@ -17,3 +17,7 @@
   grid-template-columns: subgrid;
   grid-gap: inherit;
 }
+
+.form button:hover {
+  cursor: pointer;
+}

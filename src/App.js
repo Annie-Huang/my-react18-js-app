@@ -14,10 +14,17 @@ const PhoneBookForm = () => {
     setUser({ ...user, [e.target.name]: e.target.value });
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (!user.firstName || !user.lastName || !user.phone) return;
+  };
+
   console.log('user', user);
+
   return (
     <form className='form'>
-      <div className='form-row'>
+      <div className='form-row' onSubmit={handleSubmit}>
         <label htmlFor='firstName'>First name:</label>
         <input
           type='text'
@@ -47,6 +54,7 @@ const PhoneBookForm = () => {
           onChange={handleChange}
         />
       </div>
+      <button type='submit'>Add User</button>
     </form>
   );
 };
