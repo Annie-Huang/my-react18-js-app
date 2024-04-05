@@ -85,12 +85,28 @@ const PhoneBookTable = ({ users }) => {
     </table>
   );
 };
+
 const App = () => {
   const [users, setUsers] = useState([]);
 
   const handleAddUser = (user) => {
     // console.log('aaa', user);
-    setUsers([...users, { ...user, id: users.length + 1 }]);
+    const newUserList = [...users, { ...user, id: users.length + 1 }];
+    // newUserList.sort((a, b) =>
+    //   a.firstName.toLowerCase() < b.firstName.toLowerCase() ||
+    //   (a.firstName.toLowerCase() === b.firstName.toLowerCase() &&
+    //     a.lastName.toLowerCase() < b.lastName.toLowerCase())
+    //     ? -1
+    //     : 1
+    // );
+
+    // toLowerCase() is use to compare string.
+    newUserList.sort(
+      (a, b) =>
+        a.firstName.localeCompare(b.firstName) ||
+        a.lastName.localeCompare(b.lastName)
+    );
+    setUsers(newUserList);
   };
 
   console.log('users', users);
