@@ -12,6 +12,10 @@ function ToDoList() {
     setInputValue('');
   };
 
+  const handleDeleteTodo = (id) => {
+    setTodos(todos.filter((todo) => todo.id !== id));
+  };
+
   console.log('inputValue', inputValue);
   console.log('todos', todos);
 
@@ -30,9 +34,9 @@ function ToDoList() {
       </form>
       <ul>
         {todos.map((todo) => (
-          <li key={todo.id}>
+          <li key={todo.id} className='todoItem'>
             {todo.text}
-            {/*<button onClick={() => handleDeleteTodo(todo.id)}>Delete</button>*/}
+            <button onClick={() => handleDeleteTodo(todo.id)}>Delete</button>
           </li>
         ))}
       </ul>

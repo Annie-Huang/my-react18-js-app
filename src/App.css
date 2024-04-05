@@ -3,3 +3,10 @@
   place-content: center;
   margin-top: 50px;
 }
+
+ul {
+  border: 1px solid green;
+}
+.todoItem button {
+  margin-left: 10px;
+}
