@@ -61,6 +61,30 @@ const PhoneBookForm = ({ addUser }) => {
     </form>
   );
 };
+
+const PhoneBookTable = ({ users }) => {
+  return (
+    <table>
+      <caption>Phone Book:</caption>
+      <thead>
+        <tr>
+          <th scope='col'>First Name</th>
+          <th scope='col'>Last Name</th>
+          <th scope='col'>Phone</th>
+        </tr>
+      </thead>
+      <tbody>
+        {users.map((user) => (
+          <tr key={user.id}>
+            <td>{user.firstName}</td>
+            <td>{user.lastName}</td>
+            <td>{user.phone}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  );
+};
 const App = () => {
   const [users, setUsers] = useState([]);
 
@@ -73,11 +97,7 @@ const App = () => {
   return (
     <div className='container'>
       <PhoneBookForm addUser={handleAddUser} />
-      {users.map((user) => (
-        <div key={user.id}>
-          {`${user.firstName} ${user.lastName} ${user.phone}`}
-        </div>
-      ))}
+      <PhoneBookTable users={users} />
     </div>
   );
 };
