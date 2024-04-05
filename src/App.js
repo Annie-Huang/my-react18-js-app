@@ -8,7 +8,10 @@ function ToDoList() {
   const handleAddTodo = (e) => {
     // console.log('get into submit');
     e.preventDefault();
-    setTodos([...todos, { id: Date.now(), text: inputValue }]);
+    setTodos([
+      ...todos,
+      { id: Date.now(), text: inputValue, completed: false },
+    ]);
     setInputValue('');
   };
 
@@ -16,11 +19,20 @@ function ToDoList() {
     setTodos(todos.filter((todo) => todo.id !== id));
   };
 
+  const handleCompleteToDo = (id) => {
+    setTodos(
+      todos.map((todo) =>
+        todo.id === id ? { ...todo, completed: !todo.completed } : todo
+      )
+    );
+  };
+
   console.log('inputValue', inputValue);
   console.log('todos', todos);
 
   return (
     <div className='container'>
+      <h2>My To-Do List</h2>
       {/*<form onSubmit={handleAddTodo}>*/}
       <form>
         <input
@@ -35,7 +47,12 @@ function ToDoList() {
       <ul>
         {todos.map((todo) => (
           <li key={todo.id} className='todoItem'>
-            {todo.text}
+            <span className={todo.completed ? 'completed' : null}>
+              {todo.text}
+            </span>
+            <button onClick={() => handleCompleteToDo(todo.id)}>
+              {todo.completed ? 'Undo' : 'Complete'}
+            </button>
             <button onClick={() => handleDeleteTodo(todo.id)}>Delete</button>
           </li>
         ))}
