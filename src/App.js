@@ -6,13 +6,14 @@ function ToDoList() {
   const [inputValue, setInputValue] = useState('');
 
   const handleAddTodo = (e) => {
-    console.log('get into submit');
+    // console.log('get into submit');
     e.preventDefault();
-    setTodos([...todos, inputValue]);
+    setTodos([...todos, { id: Date.now(), text: inputValue }]);
     setInputValue('');
   };
 
   console.log('inputValue', inputValue);
+  console.log('todos', todos);
 
   return (
     <div className='container'>
@@ -20,12 +21,21 @@ function ToDoList() {
       <form>
         <input
           type='text'
+          value={inputValue}
           placeholder='Add a new task'
           onChange={(e) => setInputValue(e.target.value)}
         />
         {/*<button type='submit'>Add Todo</button>*/}
         <button onClick={handleAddTodo}>Add Todo</button>
       </form>
+      <ul>
+        {todos.map((todo) => (
+          <li key={todo.id}>
+            {todo.text}
+            {/*<button onClick={() => handleDeleteTodo(todo.id)}>Delete</button>*/}
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }
