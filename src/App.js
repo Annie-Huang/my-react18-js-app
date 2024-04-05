@@ -1,7 +1,7 @@
 import './App.css';
 import { useState } from 'react';
 
-const PhoneBookForm = () => {
+const PhoneBookForm = ({ addUser }) => {
   const initState = {
     id: null,
     firstName: 'Coder',
@@ -18,13 +18,16 @@ const PhoneBookForm = () => {
     e.preventDefault();
 
     if (!user.firstName || !user.lastName || !user.phone) return;
+
+    addUser(user);
+    setUser(initState);
   };
 
-  console.log('user', user);
+  // console.log('user', user);
 
   return (
-    <form className='form'>
-      <div className='form-row' onSubmit={handleSubmit}>
+    <form className='form' onSubmit={handleSubmit}>
+      <div className='form-row'>
         <label htmlFor='firstName'>First name:</label>
         <input
           type='text'
@@ -59,9 +62,13 @@ const PhoneBookForm = () => {
   );
 };
 const App = () => {
+  const handleAddUser = (user) => {
+    console.log('aaa', user);
+  };
+
   return (
     <div className='container'>
-      <PhoneBookForm />
+      <PhoneBookForm addUser={handleAddUser} />
     </div>
   );
 };
