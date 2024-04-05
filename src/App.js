@@ -7,9 +7,10 @@ function ToDoList() {
 
   const handleAddTodo = (e) => {
     // console.log('get into submit');
+    e.preventDefault();
+
     if (!inputValue.trim()) return;
 
-    e.preventDefault();
     setTodos([
       ...todos,
       { id: Date.now(), text: inputValue, completed: false },
