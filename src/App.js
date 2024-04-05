@@ -1,6 +1,13 @@
 import './App.css';
-function App() {
-  return <div>App</div>;
+function ToDoList() {
+  return (
+    <div className='container'>
+      <form>
+        <input type='text' placeholder='Add a new task' />
+        <button>Add Todo</button>
+      </form>
+    </div>
+  );
 }
 
-export default App;
+export default ToDoList;
