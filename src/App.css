@@ -3,3 +3,17 @@
   place-content: center;
   margin-top: 50px;
 }
+
+.form {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  grid-gap: 0.5em 1em;
+}
+
+.form-row {
+  grid-column: span 2;
+
+  display: grid;
+  grid-template-columns: subgrid;
+  grid-gap: inherit;
+}
