@@ -5,6 +5,12 @@ https://codesandbox.io/p/sandbox/react-dev-j67kkz?file=%2Fpackage.json&utm_mediu
 Coderbyte React Phonebook challenge
 For this challenge you have to take a user's first name, last name, and phone number. Then display them in an alphabetical list. Built with react and react hooks.
 
+Google search on 'react phone book coderbyte'
+https://github.com/NickHimmel/coderbyte-react-phonebook/tree/master
+https://codesandbox.io/p/sandbox/coderbyte-react-phonebook-17jmh?file=%2Fsrc%2Findex.js%3A54%2C9-54%2C21
+https://gist.github.com/roshanlabh/eac12ebf9fa76880699256aefcb8d955
+https://codesandbox.io/p/sandbox/react-phone-book-coderbyte-8nyki?file=%2Fsrc%2Findex.js%3A50%2C9-50%2C26
+
 -----------------------------------------------------------------------------------
 
 PS C:\Temp> npx create-react-app my-react18-js-app --use-npm
