@@ -4,12 +4,17 @@ import { useState } from 'react';
 const PhoneBookForm = () => {
   const initState = {
     id: null,
-    firstname: 'Coder',
-    lastname: 'Byte',
+    firstName: 'Coder',
+    lastName: 'Byte',
     phone: '000000',
   };
   const [user, setUser] = useState(initState);
 
+  const handleChange = (e) => {
+    setUser({ ...user, [e.target.name]: e.target.value });
+  };
+
+  console.log('user', user);
   return (
     <form className='form'>
       <div className='form-row'>
@@ -18,7 +23,8 @@ const PhoneBookForm = () => {
           type='text'
           name='firstName'
           id='firstName'
-          value={user.firstname}
+          value={user.firstName}
+          onChange={handleChange}
         />
       </div>
       <div className='form-row'>
@@ -27,12 +33,19 @@ const PhoneBookForm = () => {
           type='text'
           name='lastName'
           id='lastName'
-          value={user.lastname}
+          value={user.lastName}
+          onChange={handleChange}
         />
       </div>
       <div className='form-row'>
         <label htmlFor='phone'>Phone:</label>
-        <input type='text' name='phone' id='phone' value={user.phone} />
+        <input
+          type='text'
+          name='phone'
+          id='phone'
+          value={user.phone}
+          onChange={handleChange}
+        />
       </div>
     </form>
   );
