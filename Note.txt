@@ -1,6 +1,9 @@
 https://react.dev/learn/tutorial-tic-tac-toe
-
 https://codesandbox.io/p/sandbox/react-dev-j67kkz?file=%2Fpackage.json&utm_medium=sandpack
+
+
+Coderbyte React Phonebook challenge
+For this challenge you have to take a user's first name, last name, and phone number. Then display them in an alphabetical list. Built with react and react hooks.
 
 -----------------------------------------------------------------------------------
 
