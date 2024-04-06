@@ -1,6 +1,16 @@
 import './App.css';
 import { useState } from 'react';
 
+/*
+1. Todo List Application
+A classic and versatile project, creating a Todo list can range from simple implementations focusing on
+basic state management and event handling to more complex versions incorporating features like filtering,
+sorting, persistence (e.g., using local storage), or even backend integration.
+
+### 1. **Todo List Application**
+- **Challenge:** Build a simple Todo List application where users can add, delete, and mark tasks as completed.
+This challenge tests basic React concepts, including component structure, state management, and event handling.
+*/
 function ToDoList() {
   const [todos, setTodos] = useState([]);
   const [inputValue, setInputValue] = useState('');
