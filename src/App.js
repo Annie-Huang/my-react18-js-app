@@ -1,25 +1,17 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import LoginModal from './components-click-outside/LoginModal';
 import './App.css';
 
-function App() {
+export default function App() {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <div className='App'>
-      <header className='App-header'>
-        <img src={logo} className='App-logo' alt='logo' />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className='App-link'
-          href='https://reactjs.org'
-          target='_blank'
-          rel='noopener noreferrer'
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App-container'>
+      <p>
+        You are logged out.{' '}
+        <button onClick={() => setIsOpen(true)}>Login</button>
+      </p>
+      {isOpen && <LoginModal onClose={() => setIsOpen(false)} />}
     </div>
   );
 }
-
-export default App;
