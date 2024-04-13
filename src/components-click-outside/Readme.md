@@ -1,5 +1,7 @@
 # Login modal interview
 
+https://github.com/maeve08/Tech-Exercise/blob/main/src/Readme.md
+
 ## Tasks
 
 1. Implement useOnClickOutside
