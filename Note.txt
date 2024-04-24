@@ -1,7 +1,7 @@
 https://react.dev/learn/tutorial-tic-tac-toe
 
 https://codesandbox.io/p/sandbox/react-dev-j67kkz?file=%2Fpackage.json&utm_medium=sandpack
-
+https://create-react-app.dev/docs/analyzing-the-bundle-size/
 -----------------------------------------------------------------------------------
 
 PS C:\Temp> npx create-react-app my-react18-js-app --use-npm
@@ -10,3 +10,6 @@ PS C:\Temp> npx create-react-app my-react18-js-app --template typescript --use-n
 PS C:\Temp\my-react18-js-app> git remote add origin https://github.com/Annie-Huang/my-react18-js-app.git
 PS C:\Temp\my-react18-js-app> git branch -M main
 PS C:\Temp\my-react18-js-app> git push -u origin main
+
+https://create-react-app.dev/docs/analyzing-the-bundle-size/
+PS C:\Temp\my-react18-js-app> npm install --save source-map-explorer
