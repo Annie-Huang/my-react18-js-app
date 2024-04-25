@@ -13,3 +13,6 @@ PS C:\Temp\my-react18-js-app> git push -u origin main
 
 https://create-react-app.dev/docs/analyzing-the-bundle-size/
 PS C:\Temp\my-react18-js-app> npm install --save source-map-explorer
+
+PS C:\Temp\my-react18-js-app> npm run build
+PS C:\Temp\my-react18-js-app> npm run analyze
